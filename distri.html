@@ -34,8 +34,13 @@
     <section id="productos" class="container">
         <h2 data-en="Our Products" data-es="Nuestros Productos">Nuestros Productos</h2>
         <p style="margin-bottom:20px; opacity:0.8" data-en="Click on a product to see wholesale prices" data-es="Haz clic en un producto para ver precios por mayor">Haz clic en un producto para ver precios por mayor</p>
+        <div class="search-container" style="margin-bottom: 30px;">
+    
+            <input type="text" id="product-search" placeholder="Buscar bebida (ej. Pepsi)..." 
+    
+            style="padding: 12px; width: 100%; max-width: 400px; border-radius: 25px; border: 1px solid var(--accent); background: var(--bg-secondary); color: var(--text-main);">
+        </div>  
         <div class="product-grid" id="product-list">
-            <!-- Los productos se cargan dinámicamente con JS -->
         </div>
     </section>
 

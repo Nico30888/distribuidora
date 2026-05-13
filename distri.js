@@ -115,4 +115,22 @@ document.addEventListener('DOMContentLoaded', () => {
             el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-es');
         });
     };
+
+    // --- LÓGICA DEL BUSCADOR ---
+    const searchInput = document.getElementById('product-search');
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase(); // Lo que escribe el usuario
+        const allCards = document.querySelectorAll('.product-card');
+
+        allCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            // Si el título incluye lo que escribimos, se muestra; si no, se oculta
+            if (title.includes(term)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
 })

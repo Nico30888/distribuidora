@@ -1,10 +1,11 @@
 const products = [
-    { id: 1, name: 'Coca Cola 1.5L', price: 2500, wholesalePrice: 18000, wholesaleQty: 8 },
-    { id: 2, name: 'Pepsi 1.5L', price: 2300, wholesalePrice: 16500, wholesaleQty: 8 },
-    { id: 3, name: 'Secco Pomelo 2L', price: 1200, wholesalePrice: 6500, wholesaleQty: 6 },
-    { id: 4, name: 'Pritty Limón 2L', price: 1500, wholesalePrice: 8200, wholesaleQty: 6 },
-    { id: 5, name: 'Vino Malbec Premium', price: 5800, wholesalePrice: 31000, wholesaleQty: 6 },
-    { id: 6, name: 'Cerveza Rubia 1L', price: 3200, wholesalePrice: 35000, wholesaleQty: 12 }
+    { id: 1, name: 'Coca Cola 2l', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'coca-cola 2l.jpg' },
+    { id: 2, name: 'Pepsi 2l', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: 'pepsi 2l.jpg' },
+    { id: 3, name: 'Secco 3L', price: 2400, wholesalePrice: 8000, wholesaleQty: 4, image: 'secco 3l.jpg' },
+    { id: 4, name: '7up 2L', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: '7up 2.25l.jpg' },
+    { id: 5, name: 'Vino viñas del balbo', price: 2800, wholesalePrice: 17000, wholesaleQty: 6, image: 'vino viñas de balbo.jpg' },
+    { id: 6, name: 'Cerveza quilmes', price: 3500, wholesalePrice: 35000, wholesaleQty: 12, image: 'cerveza quilmes.jpg' },
+    { id: 7, name: 'fanta', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'fanta 2l.jpg' }
 ];
 
 let cart = [];
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
-            <div class="img-placeholder">FOTO</div>
+            <img src="${p.image}" alt="${p.name}" style="width:100%; height:160px; object-fit:contain; border-radius:10px; margin-bottom:15px;">
             <h3>${p.name}</h3>
             <p class="price">$${p.price}</p>
         `;
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal(p) {
         modalDetail.innerHTML = `
+            <img src="${p.image}" style="width:150px; margin-bottom:15px;">
             <h2 style="color:var(--accent)">${p.name}</h2>
             <p>Precio unidad: <strong>$${p.price}</strong></p>
             <p>Fardo (${p.wholesaleQty} uds): <strong>$${p.wholesalePrice}</strong></p>
@@ -79,12 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-    // BOTÓN DE WHATSAPP SIMPLIFICADO
-    document.getElementById('whatsapp-confirm').onclick = () => {
-        const numero = "5491122334455"; // Pon tu número aquí
-        window.open();
-    };
+    // 1. Empezamos el mensaje
+        let texto = "Hola! Quisiera hacer este pedido:%0A%0A";
 
+        // 2. Agregamos cada producto del carrito al texto
+        cart.forEach((item) => {
+            const detalle = item.isWholesale ? "Fardo" : "Unidad";
+            // Usamos concatenación simple para evitar errores de teclado
+            texto = texto + "- " + item.name + " (" + detalle + ")%0A";
+        });
+
+        // 3. Agregamos el total
+        texto = texto + "%0A*Total: " + document.getElementById('cart-total').textContent + "*";
+
+        // 4. Tu número (sin el símbolo +)
+        const miNumero = "5493812232861"; 
+
+        // 5. Abrimos el enlace
+        window.open("https://wa.me/" + miNumero + "?text=" + texto, '_blank');
     // UI Eventos
     document.getElementById('cart-toggle').onclick = () => cartSidebar.classList.add('active');
     document.getElementById('close-cart').onclick = () => cartSidebar.classList.remove('active');

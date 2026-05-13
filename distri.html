@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distri Búho - Distribuidora</title>
+    <link rel="stylesheet" href="distri.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <header id="inicio">
+        <nav>
+            <div class="logo-container">
+                <h1 class="logo-text">Distri <span class="accent-text">Búho</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" data-en="Home" data-es="Inicio">Inicio</a></li>
+                <li><a href="#productos" data-en="Products" data-es="Productos">Productos</a></li>
+                <li><a href="#contacto" data-en="Contact" data-es="Contacto">Contacto</a></li>
+            </ul>
+            <div class="header-actions">
+                <button id="cart-toggle">🛒 <span id="cart-count">0</span></button>
+                <button id="theme-toggle">🌓</button>
+                <button id="lang-toggle">EN</button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h2 id="hero-title" class="animate-pop" data-en="Quality Beverages" data-es="Bebidas de Calidad">Bebidas de Calidad</h2>
+            <p data-en="Wholesale and Retail Sales" data-es="Ventas por Mayor y Menor">Ventas por Mayor y Menor</p>
+        </div>
+    </header>
+
+    <section id="productos" class="container">
+        <h2 data-en="Our Products" data-es="Nuestros Productos">Nuestros Productos</h2>
+        <p style="margin-bottom:20px; opacity:0.8" data-en="Click on a product to see wholesale prices" data-es="Haz clic en un producto para ver precios por mayor">Haz clic en un producto para ver precios por mayor</p>
+        <div class="product-grid" id="product-list">
+            <!-- Los productos se cargan dinámicamente con JS -->
+        </div>
+    </section>
+
+    <!-- Modal de Detalle de Producto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-detail"></div>
+        </div>
+    </div>
+
+    <!-- Carrito Lateral -->
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3 data-en="Your Order" data-es="Tu Pedido">Tu Pedido</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-container">
+                <strong data-en="Total:" data-es="Total:">Total:</strong>
+                <span id="cart-total">$0</span>
+            </div>
+            <button id="whatsapp-confirm" class="confirm-btn">Confirmar por WhatsApp</button>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <h3 data-en="Contact" data-es="Contacto">Contacto</h3>
+            <div class="contact-links">
+                <a href="https://wa.me/TUNUMERO" class="contact-btn whatsapp" target="_blank">WhatsApp</a>
+                <a href="mailto:TUEMAIL@gmail.com" class="contact-btn email">Email</a>
+            </div>
+            <p style="margin-top:20px; font-size:0.8rem">&copy; 2026 Distri Búho</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top">↑</button>
+
+    <script src="distri.js"></script>
+</body>
+</html>

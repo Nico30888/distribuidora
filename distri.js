@@ -81,24 +81,37 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-    // 1. Empezamos el mensaje
-        let texto = "Hola! Quisiera hacer este pedido:%0A%0A";
+    // Seleccionamos el botón de confirmar pedido
+    const btnWhatsapp = document.getElementById('whatsapp-confirm');
 
-        // 2. Agregamos cada producto del carrito al texto
-        cart.forEach((item) => {
-            const detalle = item.isWholesale ? "Fardo" : "Unidad";
-            // Usamos concatenación simple para evitar errores de teclado
-            texto = texto + "- " + item.name + " (" + detalle + ")%0A";
-        });
+    if (btnWhatsapp) {
+        btnWhatsapp.onclick = () => {
+            // Verificamos que haya algo en el carrito antes de enviar
+            if (cart.length === 0) {
+                alert("Agregá productos al carrito primero");
+                return;
+            }
 
-        // 3. Agregamos el total
-        texto = texto + "%0A*Total: " + document.getElementById('cart-total').textContent + "*";
+            // 1. Empezamos el mensaje
+            let texto = "Hola! Quisiera hacer este pedido:%0A";
 
-        // 4. Tu número (sin el símbolo +)
-        const miNumero = "5493812232861"; 
+            // 2. Agregamos cada producto del carrito
+            cart.forEach((item) => {
+                const detalle = item.isWholesale ? "Fardo" : "Unidad";
+                texto = texto + "- " + item.name + " (" + detalle + ")%0A";
+            });
 
-        // 5. Abrimos el enlace
-        window.open("https://wa.me/" + miNumero + "?text=" + texto, '_blank');
+            // 3. Agregamos el total
+            const total = document.getElementById('cart-total').textContent;
+            texto = texto + "%0A*Total: " + total + "*";
+
+            // 4. Tu número
+            const miNumero = "5493812232861";
+
+            // 5. Abrimos el enlace
+            window.open("https://wa.me/" + miNumero + "?text=" + texto, "_blank");
+        };
+    }
     // UI Eventos
     document.getElementById('cart-toggle').onclick = () => cartSidebar.classList.add('active');
     document.getElementById('close-cart').onclick = () => cartSidebar.classList.remove('active');

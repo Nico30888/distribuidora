@@ -25,7 +25,7 @@ Sigue estos pasos para ver el proyecto funcionando en tu computadora:
     git clone https://github.com/Nico30888/distribuidora.git
     ```
 2.  **Preparar las imágenes:**
-    Asegúrate de que las fotos de los productos estén en la misma carpeta que los archivos de código y que sus nombres coincidan con los definidos en `distri.js`.
+    Asegúrate de tener una carpeta llamada imagenes con las fotos correspondientes, ya que las rutas en distri.js apuntan a ese directorio
 3.  **Abrir el proyecto:**
     Simplemente haz doble clic en el archivo `distri.html` para abrirlo en tu navegador.
     
@@ -44,7 +44,12 @@ Sigue estos pasos para ver el proyecto funcionando en tu computadora:
     * Sistema de búsqueda y filtrado.
     * Google Fonts: Tipografía "Poppins" para que se vea moderno
     
+## funcionalidades principales
 
+- Modo Oscuro/Claro: Interfaz adaptable al gusto del usuario.
+- Buscador Inteligente: Filtro de productos instantáneo.
+- Sistema de Precios Diferenciados: Cálculo automático para ventas por unidad o por fardo.
+- Multilingüe: Soporte para idiomas Español e Inglés.
 
 ## Creado por:
 

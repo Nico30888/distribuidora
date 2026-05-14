@@ -133,4 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+     // --- LÓGICA PARA MOSTRAR/OCULTAR PRECIOS ---
+    const btnTogglePrices = document.getElementById('toggle-prices');
+    let preciosVisibles = true; // Estado inicial
+
+    btnTogglePrices.addEventListener('click', () => {
+        // Seleccionamos todos los elementos que tengan la clase "price"
+        const precios = document.querySelectorAll('.price');
+        
+        preciosVisibles = !preciosVisibles; // Cambiamos el estado (true a false o viceversa)
+
+        precios.forEach(p => {
+            // Si están visibles, los ocultamos; si no, los mostramos
+            p.style.visibility = preciosVisibles ? "visible" : "hidden";
+        });
+
+        // Cambiamos el texto del botón para que el usuario sepa qué va a pasar
+        btnTogglePrices.textContent = preciosVisibles ? "Ocultar Precios" : "Mostrar Precios";
+    });
 })

@@ -152,3 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
         btnTogglePrices.textContent = preciosVisibles ? "Ocultar Precios" : "Mostrar Precios";
     });
 })
+// --- EFECTO DE ESCRIBIR EN EL TÍTULO ---
+    const tituloSobreNosotros = document.querySelector('.about-section h2');
+    const textoOriginal = tituloSobreNosotros.innerHTML;
+    tituloSobreNosotros.innerHTML = ""; // Lo vaciamos primero
+
+    let i = 0;
+    function escribirTitulo() {
+        if (i < textoOriginal.length) {
+            // Vamos sumando letra por letra al DOM
+            tituloSobreNosotros.innerHTML = textoOriginal.substring(0, i + 1);
+            i++;
+            setTimeout(escribirTitulo, 50); // Velocidad de escritura
+        } else {
+            // Al terminar, nos aseguramos de restaurar el HTML (por si hay etiquetas <span>)
+            tituloSobreNosotros.innerHTML = textoOriginal;
+        }
+    }
+
+    // Iniciamos el efecto apenas carga la página
+    escribirTitulo();

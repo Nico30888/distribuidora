@@ -1,11 +1,11 @@
 const products = [
-    { id: 1, name: 'Coca Cola 2l', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'coca-cola 2l.jpg' },
-    { id: 2, name: 'Pepsi 2l', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: 'pepsi 2l.jpg' },
-    { id: 3, name: 'Secco 3L', price: 2400, wholesalePrice: 8000, wholesaleQty: 4, image: 'secco 3l.jpg' },
-    { id: 4, name: '7up 2L', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: '7up 2.25l.jpg' },
-    { id: 5, name: 'Vino viñas del balbo', price: 2800, wholesalePrice: 17000, wholesaleQty: 6, image: 'vino viñas de balbo.jpg' },
-    { id: 6, name: 'Cerveza quilmes', price: 3500, wholesalePrice: 35000, wholesaleQty: 12, image: 'cerveza quilmes.jpg' },
-    { id: 7, name: 'fanta', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'fanta 2l.jpg' }
+    { id: 1, name: 'Coca Cola 2l', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'imagenes/coca-cola 2l.jpg' },
+    { id: 2, name: 'Pepsi 2l', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: 'imagenes/pepsi 2l.jpg' },
+    { id: 3, name: 'Secco 3L', price: 2400, wholesalePrice: 8000, wholesaleQty: 4, image: 'imagenes/secco 3l.jpg' },
+    { id: 4, name: '7up 2L', price: 2600, wholesalePrice: 16500, wholesaleQty: 8, image: 'imagenes/7up 2.25l.jpg' },
+    { id: 5, name: 'Vino viñas del balbo', price: 2800, wholesalePrice: 17000, wholesaleQty: 6, image: 'imagenes/vino viñas de balbo.jpg' },
+    { id: 6, name: 'Cerveza quilmes', price: 3500, wholesalePrice: 35000, wholesaleQty: 12, image: 'imagenes/cerveza quilmes.jpg' },
+    { id: 7, name: 'fanta', price: 3000, wholesalePrice: 22000, wholesaleQty: 8, image: 'imagenes/fanta 2l.jpg' }
 ];
 
 let cart = [];
